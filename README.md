@@ -98,5 +98,5 @@ to evaluate whether v2 is operationally "better" than v1; enabling operators to 
 
 ## Discussion
 
-1.  How did PCF's enable zero downtime deployment?
+1.  How did PCF enable zero downtime deployment?
 2.  How does ELK-for-PCF allow us to answer the question: "Is v2 operationally better than v1"?
