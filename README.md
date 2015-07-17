@@ -1,15 +1,19 @@
-# Blue/Green deployments:
-# Is v2 "operationally" better than v1?
+# Dicey app deployments:
+## Evaluating whether v2 is "operationally better" than v1 during a blue/green deployment...
 
-This simple application demonstrates how the ELK-for-PCF tile gives operational insite into blue/green
+This simple application demonstrates how the ELK-for-PCF tile gives operational insights into blue/green
 deployments on Pivotal Cloud Foundry.
 
-Specifically, it shows how the logs can be analysed in near real time during a zero downtime blue/green deployment
-to evaluate whether v2 is operationally "better" than v1, to inform whether the deployment should be completed or rolled back.
+Specifically, it shows how firehose logs can be analysed in near real time during a zero downtime blue/green deployment
+to evaluate whether v2 is operationally "better" than v1; enabling operators to decide whether to complete or roll back a  deployment.
 
 ## Setup
 
 0. Clone this repository
+  ```
+  git clone https://github.com/stayup-io/cf-dicey-app.git
+  ```
+  
 0. Install [`siege`](https://www.joedog.org/siege-home/)
   ```  
   brew install siege
@@ -60,8 +64,8 @@ to evaluate whether v2 is operationally "better" than v1, to inform whether the 
   ```
   
 0.  Consult the App Heath dashboard, notice:
-  * 1/6th of the "production" traffic goes to cf-dicey-app-v2
-  * cf-dicey-app-v2 actually has more `503` errors, and a worse 95th percentile response time!
+  * 1/6th of the "production" traffic goes to `cf-dicey-app-v2`
+  * Woops!  `cf-dicey-app-v2` actually has more `503` errors, and a worse 95th percentile response time!
   * <img width="1669" alt="screen shot 2015-07-17 at 06 24 13" src="https://cloud.githubusercontent.com/assets/227505/8741781/ba2d5136-2c55-11e5-8b1a-8e66b01604f1.png">
 
 0.  Abort the deploy
@@ -80,7 +84,7 @@ to evaluate whether v2 is operationally "better" than v1, to inform whether the 
   ```
   
 0.  Consult the App Heath dashboard, notice:
-  * cf-dicey-app-v3 actually has less `503` errors, 
+  * `cf-dicey-app-v3` has less `503` errors, 
   * and a better 95th percentile response time. 
   * <img width="1671" alt="screen shot 2015-07-17 at 07 27 14" src="https://cloud.githubusercontent.com/assets/227505/8741815/3aa42e0c-2c56-11e5-98f7-9beba69b08a9.png">
   * Hurrah!
@@ -95,4 +99,4 @@ to evaluate whether v2 is operationally "better" than v1, to inform whether the 
 ## Discussion
 
 1.  How did PCF's enable zero downtime deployment?
-2.  How is ELK-for-PCF allow us to answer the question: "Is v2 operationally better than v1"?
+2.  How does ELK-for-PCF allow us to answer the question: "Is v2 operationally better than v1"?
