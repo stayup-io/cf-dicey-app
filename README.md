@@ -7,6 +7,10 @@ deployments on Pivotal Cloud Foundry.
 Specifically, it shows how firehose logs can be analysed in near real time during a zero downtime blue/green deployment
 to evaluate whether v2 is operationally "better" than v1; enabling operators to decide whether to complete or roll back a  deployment.
 
+<div align="center">
+<a href="https://youtu.be/6i2Q-boiKJg"><img width="425" src="https://cloud.githubusercontent.com/assets/227505/8760628/eceef8f2-2d1f-11e5-8a41-09c00865bdd9.png"></a>
+</div>
+
 ## Setup
 
 0. Clone this repository
